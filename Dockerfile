@@ -4,12 +4,11 @@ MAINTAINER Eric Taieb Walch <teknologist@gmail.com>
 ENV EXOADDON_SRC_DIR /home/${EXO_USER}/src
 ENV M2_HOME /opt/apache-maven-3.2.3
 
-# Install MongoDB & Git
+# Install Git
 USER root
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
 RUN apt-get -qq update && \
-  apt-get -qq -y install mongodb-org git && \
+  apt-get -qq -y install git && \
   apt-get -qq -y autoremove && \
   apt-get -qq -y autoclean
 
