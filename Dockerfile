@@ -27,7 +27,8 @@ RUN echo 'export M2_HOME=$M2_HOME' >> /home/${EXO_USER}/.bashrc && \
  mkdir /home/${EXO_USER}/.m2 && \
  echo '<settings><mirrors><mirror><id>exo-central-server</id><name>eXo Central Server</name><url>http://repository.exoplatform.org/public/</url><mirrorOf>central</mirrorOf></mirror></mirrors></settings>' > /home/${EXO_USER}/.m2/settings.xml         && \
  cd /home/${EXO_USER}/.m2 && \
- echo "EXO_JVM_SIZE_MAX=\"1g\"" > ${EXO_APP_DIR}/current/bin/setenv-customize.sh
+ echo "EXO_JVM_SIZE_MAX=\"3584m\"" > ${EXO_APP_DIR}/current/bin/setenv-customize.sh && \
+ echo "EXO_JVM_SIZE_MIN=\"3584m\"" >> ${EXO_APP_DIR}/current/bin/setenv-customize.sh
 
 #Clone exo chat addon git / compile the addon to pull dependencies in .m2/ - cleanup leftovers
 RUN git clone https://github.com/exo-addons/chat-application.git ${EXOADDON_SRC_DIR} && \
