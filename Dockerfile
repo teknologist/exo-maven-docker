@@ -2,7 +2,7 @@ FROM exoplatform/ubuntu-jdk7-exo:plf-4.1
 MAINTAINER Eric Taieb Walch <teknologist@gmail.com>
 
 ENV EXOADDON_SRC_DIR /home/${EXO_USER}/src
-ENV M2_HOME /opt/apache-maven-3.2.3
+ENV M2_HOME /opt/apache-maven-3.2.5
 
 # Install Git
 USER root
@@ -16,9 +16,9 @@ RUN apt-get -qq update && \
 
 #Install Maven 3'
 RUN mkdir -p ${M2_HOME} && \
-curl -L -o /tmp/apache-maven-3.2.3-bin.zip http://wwwftp.ciril.fr/pub/apache/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.zip && \
-    unzip -q /tmp/apache-maven-3.2.3-bin.zip -d /opt/ && \
-    rm -f /tmp/apache-maven-3.2.3-bin.zip
+curl -L -o /tmp/apache-maven-3.2.5-bin.zip http://www.us.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip && \
+    unzip -q /tmp/apache-maven-3.2.5-bin.zip -d /opt/ && \
+    rm -f /tmp/apache-maven-3.2.5-bin.zip
 
 USER exo
 
