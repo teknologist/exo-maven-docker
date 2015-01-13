@@ -1,4 +1,4 @@
-FROM exoplatform/ubuntu-jdk7-exo:plf-4.1-rc1
+FROM exoplatform/ubuntu-jdk7-exo:plf-4.1
 MAINTAINER Eric Taieb Walch <teknologist@gmail.com>
 
 ENV EXOADDON_SRC_DIR /home/${EXO_USER}/src
